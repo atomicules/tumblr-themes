@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.js
+"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="verify-v1" content="YYcC+YBYUGIyO1Xrtz2YFNgCqmgbgctGFB8tjpseEQY=" />
+<title>{Title}{block:PostTitle} : {PostTitle}{/block:PostTitle}</title>
+<link rel="shortcut icon" href="{Favicon}" />
+<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+<meta name="color:Background" content="#FFFFFF"/>
+<meta name="color:Title" content="#222222"/>
+<meta name="color:Title Hover" content="#222222"/>
+<meta name="Hover" content="#808080"/>
+<meta name="color:Link" content="#444444"/>
+<meta name="color:Link Hover" content="#808080"/>
+<meta name="color:Post Link Hover" content="444444"/>
+<meta name="color:Date" content="#909090"/>
+<meta name="color:Date Hover" content="#444444"/>
+<style type="text/css">
+* {
+margin: 0;
+padding: 0;
+}
+html {
+margin: 40px;
+background: {color:Background};  
+  
+}
+body {
+font: 12px 'Lucida Grande', Gill Sans MT, sans-serif;
+margin: 0px;
+padding: 10px;
+background: #fff;
+min-width: 700px;
+}
+#main {
+width: 72%;
+padding: 10px;
+margin-left: 25%;
+min-width: 500px;
+/* whilst editing
+border: 1px dotted red;*/
+
+}
+#sidebar {
+float: left;
+width: 24%;
+background: #fff;
+padding: 0px;
+margin: 0px;
+/* whilst editing
+border: 1px dotted black;*/
+min-width: 200px;
+
+}
+pre {
+background-color: LightGrey;
+border: 1px solid;
+font-size: 0.8em;
+margin: 1em 0pt;
+overflow-x: auto;
+overflow-y: hidden;
+padding 0.25em;
+padding-bottom: 2em;
+width: 80%;
+}
+
+a {
+outline: none;
+color: {color:Link};
+text-decoration: underline;
+}
+a:hover {
+color: {color:Link Hover};
+}
+a img {
+border: none;
+}
+ul {
+margin-left: 0em !important;
+margin-bottom: 1em !important;
+}
+ol {
+margin-left: 0em !important;
+margin-bottom: 1em !important;
+}
+
+h1 {
+font: 4em 'Lucida Grande', Gill Sans MT, sans-serif;
+padding: 0px 0px 0px 0px;
+margin: 0px 0px 0px 0px;
+color: {color:Title};
+}
+h1, h1 a {
+text-decoration: none !important;
+}
+
+h1 a:hover {
+color: {color:Title Hover};
+}
+
+
+#sidebar h3 {
+font-size: 15px;
+letter-spacing: -1px;
+color: #222;
+padding: 0px 0px 5px 0px;
+margin: 0px 0px 0px 0px;
+}
+#sidebar h3 a {
+color: #222222;
+text-decoration: none;
+}
+#sidebar h3 a:hover {
+color: #808080;
+}
+#sidebar p {
+padding: 0px;
+}
+.post {
+margin: 0 0 20px 0;
+/*width: 500px;*/
+}
+.post h2 {
+color: #63a686;
+font-weight: normal;
+font-size: 22px;
+line-height: 24px;
+letter-spacing: -1px;
+margin: 0 0 8px 0;
+}
+.post {
+border-bottom:1px dotted #bbbbbb;
+margin-bottom:4.5em;
+}
+.postcontent {
+/*width: 500px;
+float: left; */
+font-size: 12px;
+line-height: 16px;
+color: #333;
+}
+.postcontent a {
+text-decoration: none;
+color: {color:Link};
+}
+.postcontent a:hover {
+text-decoration: underline;
+color: {color:Link Hover};
+}
+.postcontent .descrip,
+.postcontent .source {
+margin: 10px 0 0 0;
+}
+.post p {
+margin: 0 0 10px 0;
+line-height: 20px;
+}
+.post a {
+text-decoration: underline;
+}
+.post blockquote {
+padding: 0 0 0 10px;
+margin: 0 0 18px 0;
+margin-bottom: 10px; 
+margin-left: 20px;
+border-left: 1px solid #444444;
+}
+.post .text_header {
+color: #222;
+font-weight: normal;
+font-size: 22px;
+line-height: 24px;
+letter-spacing: -1px;
+margin: 0 0 8px 0;
+}
+.post .quote div.quote {
+font-size: 16px;
+line-height: 20px;
+font-weight: bold;
+color: #000;
+}
+.post .quote div.source {
+margin: 10px 0 0 0;
+}
+.post .link .href {
+font-size: 22px;
+line-height: 42px;
+letter-spacing: -1px;
+}
+.post .link .href a {
+text-decoration: none;
+color: {color:Link};
+padding: 0px;
+}
+.post .link .href a:hover {
+text-decoration: none;
+color: {color:Post Link Hover};
+padding: 0px;
+}
+.post .descrip ul, .post .postcontent ul, .post .descrip ol, .post .postcontent ol {
+padding: 0px 0px 0px 16px;
+/* border: 1px red dashed; */
+}
+ul.post-tags {
+margin-left: -15px !important;
+/* border: 1px red dashed; */
+/* This overides the indent for lists in posts */
+}
+.post .chat ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+margin-left: 0px !important;
+}
+.post .chat ul li {
+padding: 4px 0px 4px 0px;
+margin: 0 0 1px 0;
+}
+.post .chat ul li span.label {
+font-weight: bold;
+}
+.post .chat ul li.odd {
+background-color: #fff;
+}
+.post .chat ul li.even {
+background-color: #fff;
+}
+.post .audiobox {
+background: #fff;
+}
+.post-tags li.tags ul, .post-footer li.tags ul li{
+display: inline; 
+}
+.post-tags{
+list-style: none;
+font-size: 12px;
+margin-top: 20px;
+color: #808080;
+}
+.post-tags li{
+display: inline;
+}
+.post-tags li.tags ul li {
+margin-left: 0.4em;
+text-align: left;
+}
+
+#prev-next {
+position: relative;
+display: inline;
+left: 0px;
+padding: 15px;
+font-size: 15px;
+}
+#next {
+left: 999px;
+color: #222;
+}
+#previous {
+left: 999px;
+color: #222;
+}
+.permalink, .commentlink {
+margin-bottom: 15px;
+padding: 0px 0px 0px 0px;
+}
+.permalink a, .commentlink a {
+padding: 5px 10px 5px 0px;
+text-decoration: none;
+}
+.permalink a {
+color: {color:Date};
+}
+.permalink a:hover {
+color: {color:Date Hover};
+}
+.commentlink a {
+color: #333AFF;
+}
+.commentlink a:hover {
+color: {color:Date Hover};
+}
+#links {
+font-size: 11px;
+margin-bottom: 10px;
+line-height: 20px;
+}
+#links ul {
+padding-left: 0px;
+margin-left: 0px;
+}
+	
+#links li {
+display: inline;
+list-style: none;
+margin-right: 15px;
+}
+	
+#links li a {
+padding-bottom: 2px;
+}
+.following{
+margin-top: 5px;
+margin-bottom: 5px;
+}
+.following a img{
+border: 1px solid #222;
+padding: 1px;
+margin: 1px;
+}
+.following a img:hover{
+border: 1px solid #808080;
+padding: 1px;
+margin: 1px;
+}
+#twitter {
+color: #222;
+font-family: 'Lucida Grande', Gill Sans MT, sans-serif;
+font-size: 12px;
+text-align: left;
+line-height: 20px;
+padding: 3px 0px 0px 0px;
+margin-left: 0px !important;
+}
+#twitter ul {
+list-style-type: none;
+}
+
+#twitter ul li:before {
+content: "\00BB \0020"; 
+}
+
+#twitter a {
+color: {color:Link};
+}
+#twitter a:hover {
+color: {color:Link Hover};
+}
+#dsq-comments {
+margin-top: 0px;
+padding-top: 0px;
+
+}
+.CreditsAndLicense {
+color: #444444;
+font-size: 10px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+margin-bottom: -40px;
+width: 100%;
+padding-top: 20px;
+clear: both;
+/* border: 1px red dotted; */
+}
+.CreditsAndLicense a {
+text-decoration: underline;
+}
+#avatar {
+height: 128px; width: 128px;
+border: 1px; border-color: transparent;
+-moz-border-radius:15px;
+-webkit-border-radius:15px;
+-opera-border-radius:15px;
+border-radius:15px;
+text-decoration:none;
+}
+/*
+Images are wrapped in divs classed "flickr_badge_image" with ids "flickr_badge_imageX" where "X" is an integer specifying ordinal position. Below are some styles to get you started!
+*/
+#flickr_badge_uber_wrapper {text-align:center; width:150px;}
+#flickr_badge_wrapper {padding:10px 0 10px 0;}
+.flickr_badge_image {margin:0 10px 10px 10px;}
+.flickr_badge_image img {border: 1px solid black !important;}
+#flickr_badge_source {text-align:left; margin:0 10px 0 10px;}
+#flickr_badge_icon {float:left; margin-right:5px;}
+#flickr_www {display:block; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
+#flickr_badge_uber_wrapper a:hover,
+#flickr_badge_uber_wrapper a:link,
+#flickr_badge_uber_wrapper a:active,
+#flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
+#flickr_badge_wrapper {background-color:#ffffff;border: none}
+#flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
+
+table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 td {margin:0 !important;padding:0 !important;border:0 !important;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmHead a:hover {background:url(http://cdn.last.fm/widgets/images/en/header/chart/recenttracks_regular_grey.png) no-repeat 0 0 !important;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmEmbed object {float:left;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmFoot td.lfmConfig a:hover {background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat 0px 0 !important;;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmFoot td.lfmView a:hover {background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -85px 0 !important;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmFoot td.lfmPopup a:hover {background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -159px 0 !important;}
+
+</style>
+</head>
+<body>
+
+
+    
+      <h1><a href="/">{Title}</a></h1>
+      <div id="sidebar">
+        <div id="avatar" style="background:#0a2939 url('{PortraitURL-128}')" ></div>
+        <br />
+        <h3>About</h3>
+        <p>{Description}</p>
+        <br />
+        <h3>Meta</h3>
+        <div id="links">
+          <ul>
+            <li><a href="/archive">Archive</a></li>
+            <li><a href="/rss">Feed</a></li>
+            <li><a href="/random">Random</a></li>
+            <li><a href="http://tumblephone.com/i5m/">Mobile</a></li>
+          </ul>
+        </div><!-- End of links -->
+        <div id="search">
+          <form action="/search" method="get">
+            <input type="text" size="15" name="q" value="{SearchQuery}"/>
+            <input type="submit" value="Search"/>
+          </form>
+        </div><!-- End of search -->
+        <br />
+        <!-- Replace the <username> tags with your twitter username -->
+        <h3><a href="http://twitter.com/i5m">Twitter</a></h3>
+        <div id="twitter">
+          <ul id="twitter_update_list">
+            <li></li>
+          </ul>
+        </div><!-- End of twitter -->
+        <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+        <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/i5m.json?callback=twitterCallback2&amp;count=5"></script>
+
+
+        <!-- Start of Flickr Badge -->
+        <div id="flickr_badge_uber_wrapper"><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a>
+          <div id="flickr_badge_wrapper">
+            <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=5&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=91098778%40N00"></script>
+          </div>
+        </div>
+        <!-- End of Flickr Badge -->
+
+        <!-- Last.fm -->
+        <br />
+        <h3>Last.fm</h3>
+        <table class="lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781" cellpadding="0" cellspacing="0" border="0" style="width:184px;">
+          <tr class="lfmHead">
+            <td><a title="i5m: Recently Listened Tracks" href="http://www.last.fm/user/i5m" target="_blank" style="display:block;overflow:hidden;height:20px;width:184px;background:url(http://cdn.last.fm/widgets/images/en/header/chart/recenttracks_regular_grey.png) no-repeat 0 -20px;text-decoration:none;border:0;"></a>
+            </td>
+          </tr>
+          <tr class="lfmEmbed">
+            <td><object type="application/x-shockwave-flash" data="http://cdn.last.fm/widgets/chart/19.swf" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" id="lfmEmbed_1841502766" width="184" height="179"> <param name="movie" value="http://cdn.last.fm/widgets/chart/19.swf" /> <param name="flashvars" value="type=recenttracks&amp;user=i5m&amp;theme=grey&amp;lang=en&amp;widget_id=chart_9ed8952f75e79f48db6b40087e40b781" /> <param name="allowScriptAccess" value="always" /> <param name="allowNetworking" value="all" /> <param name="allowFullScreen" value="true" /> <param name="quality" value="high" /> <param name="bgcolor" value="999999" /> <param name="wmode" value="transparent" /> <param name="menu" value="true" /> </object>
+            </td>
+          </tr>
+          <tr class="lfmFoot">
+            <td style="background:url(http://cdn.last.fm/widgets/images/footer_bg/grey.png) repeat-x 0 0;text-align:right;">
+              <table cellspacing="0" cellpadding="0" border="0" style="width:184px;">
+                <tr>
+                  <td class="lfmConfig"><a href="http://www.last.fm/widgets/?colour=grey&amp;chartType=recenttracks&amp;user=i5m&amp;chartFriends=0&amp;from=code&amp;widget=chart" title="Get your own widget" target="_blank" style="display:block;overflow:hidden;width:85px;height:20px;float:right;background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat 0px -20px;text-decoration:none;border:0;"></a>
+                  </td>
+                  <td class="lfmView" style="width:74px;"><a href="http://www.last.fm/user/i5m" title="View i5m's profile" target="_blank" style="display:block;overflow:hidden;width:74px;height:20px;background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -85px -20px;text-decoration:none;border:0;"></a>
+                  </td>
+                  <td class="lfmPopup" style="width:25px;"><a href="http://www.last.fm/widgets/popup/?colour=grey&amp;chartType=recenttracks&amp;user=i5m&amp;chartFriends=0&amp;from=code&amp;widget=chart&amp;resize=1" title="Load this chart in a pop up" target="_blank" style="display:block;overflow:hidden;width:25px;height:20px;background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -159px -20px;text-decoration:none;border:0;" onclick="window.open(this.href + '&amp;resize=0','lfm_popup','height=279,width=234,resizable=yes,scrollbars=yes'); return false;"></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- DELICIOUS -->
+        <br />
+        <h3>Delicious</h3>
+        <script type="text/javascript" src="http://feeds.delicious.com/v2/js/i5m?title=Recent%20bookmarks&amp;icon=s&amp;count=5&amp;bullet=%C2%BB&amp;sort=date"></script>
+
+        <!-- READER-->
+        <br />
+        <h3>Reader</h3>
+        <script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
+        <script type="text/javascript" src="http://www.google.com/reader/public/javascript/user/13578209299560015229/state/com.google/broadcast?n=5&amp;callback=GRC_p(%7Bc%3A%22gray%22%2Ct%3A%22i5m's%20shared%20items%22%2Cs%3A%22false%22%2Cb%3A%22false%22%7D)%3Bnew%20GRC"></script>
+
+        <!-- DELICIOUS LINKROLL-->
+        <br />
+        <h3>Linkroll</h3>
+        <script type="text/javascript" src="http://feeds.delicious.com/v2/js/i5m/linkroll?title=Linkroll&amp;icon=s&amp;count=10&amp;bullet=%C2%BB&amp;sort=alpha"></script>
+
+      </div><!-- End of Sidebar -->
+      
+      <!-- TUMBLR POSTS -->
+      <div id="main">
+        {block:SearchPage}
+        <div id="searchresultcount">
+          <p>Your search for <span class="query"><b>{SearchQuery}</b></span> yielded {SearchResultCount} result(s).</p>
+        </div>
+        {/block:SearchPage}
+        
+        {block:Posts}
+        <div class="post">
+          <div class="permalink">
+            <a href="{Permalink}">{Month} {DayOfMonth}, {Year} at {12Hour}:{Minutes}{AmPm}</a>
+          </div>
+          
+          <!-- Text Post -->
+          {block:Text}
+            {block:Title}
+              <div class="text_header">
+              {Title}
+              </div>
+            {/block:Title}
+            <div class="postcontent text {TagsAsClasses}">
+              {Body}
+              <div class="commentlink">
+                 <a href="{Permalink}#disqus_thread">Comments</a>
+              </div>
+              <ul class="post-tags">
+                {block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
+                {block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
+              </ul>
+              <br /><br />
+          {/block:Text}
+
+          <!-- Photo Post -->
+          {block:Photo}
+            <div class="postcontent photo {TagsAsClasses}">
+              {LinkOpenTag}
+              <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+              {LinkCloseTag}
+              {block:Caption}
+              <div class="source">{Caption}</div>
+              {/block:Caption}
+              <div class="commentlink">
+                 <a href="{Permalink}#disqus_thread">Comments</a>
+              </div>
+              <ul class="post-tags">
+                {block:RebloggedFrom}<li class="tags">Reblogged from <a href="{ReblogParentURL}"><i>{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
+                {block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
+              </ul>
+              <br /><br />
+          {/block:Photo}
+
+          <!-- Quote Post -->
+          {block:Quote}
+              <div class="postcontent quote {TagsAsClasses}">
+                <div class="quote">"{Quote}"</div>
+                {block:Source}
+                <div class="source">&#8212; {Source}</div>
+                {/block:Source}
+                <div class="commentlink">
+                    <a href="{Permalink}#disqus_thread">Comments</a>
+                </div>
+                <ul class="post-tags">
+                  {block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
+                  {block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
+                </ul>
+                <br /><br />
+          {/block:Quote}
+
+          <!-- Link Post -->
+          {block:Link}
+            <div class="postcontent link {TagsAsClasses}">
+              <div class="href">
+                <a href="{URL}" {Target}>&#187; {Name}</a>
+              </div>
+              {block:Description}
+              <div class="descrip">{Description}</div>
+              {/block:Description}
+              <div class="commentlink">
+                 <a href="{Permalink}#disqus_thread">Comments</a>
+              </div>
+              <ul class="post-tags">
+                {block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
+                {block:HasTags}<li class="tags">Tags: 
+                  <ul>{block:Tags}
+                    <li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
+                  </ul>
+                </li>{/block:HasTags}
+              </ul>
+              <br /><br />
+           
+          {/block:Link}
+
+          <!-- Chat Post -->
+          {block:Chat}
+            {block:Title}
+            <div class="text_header">{Title}</div>
+            {/block:Title}
+            <div class="postcontent chat {TagsAsClasses}">
+              <ul>
+                {block:Lines}
+                <li class="{Alt}">{block:Label}<span class="label">{Label}</span>
+                {/block:Label}{Line}</li>
+                {/block:Lines}
+              </ul>
+              <div class="commentlink">
+                 <a href="{Permalink}#disqus_thread">Comments</a>
+              </div>
+              <ul class="post-tags">
+                {block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
+                {block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
+              </ul>
+              <br /><br />
+          {/block:Chat}
+
+          <!-- Audio Post -->
+          {block:Audio}
+            <div class="postcontent audio {TagsAsClasses}">
+              <div class="audiobox">
+                <center>{AudioPlayerBlack}</center>
+              </div>
+              {block:Caption}
+              <div class="descrip">{Caption}</div>
+              {/block:Caption}
+              <div class="permalink">
+                 <a href="{Permalink}#disqus_thread">Comments</a>
+              </div>
+              <ul class="post-tags">
+                {block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
+                {block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
+              </ul>
+              <br /><br />
+          {/block:Audio}
+
+          <!-- Video Post -->
+          {block:Video}
+            <div class="postcontent video {TagsAsClasses}">
+              {Video-500}
+              {block:Caption}
+              <div class="descrip">{Caption}</div>
+              {/block:Caption}
+              <div class="permalink">
+                 <a href="{Permalink}#disqus_thread">Comments</a>
+              </div>
+              <ul class="post-tags">
+                {block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
+                {block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
+              </ul>
+              <br /><br />
+          {/block:Video}
+            
+            </div><!-- end of postcontent -->
+
+        
+        
+        </div><!-- end of posts -->
+        {/block:Posts}
+
+        {block:Permalink}
+          <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+          <div id="disqus_thread"></div><script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/i5m/embed.js"></script>
+          <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        {/block:Permalink}
+        <script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/i5m/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+      </script>
+
+
+        <!-- Page Navigation -->
+        <div id="prev-next" class="autopagerize_insert_before">
+          {block:PreviousPage}
+            <a id="previous" href="{PreviousPage}">&#171; previous</a>
+          {/block:PreviousPage}&nbsp;
+          {CurrentPage} of {TotalPages}&nbsp;
+          {block:NextPage}
+          <a id="next" href="{NextPage}">next &#187;</a>
+          {/block:NextPage}
+        </div><!-- End of prev-next Page Navigation -->
+
+    </div> <!-- End of main -->
+
+<div class="CreditsAndLicense">
+  Theme based on <a href="http://prowhite.tumblr.com/">Pro White 1.0</a>  / Powered by <a href="http://www.tumblr.com">Tumblr</a> / i5m created content: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a>
+</div>
+
+
+</body>
+</html>
+
+
+
+
