@@ -101,18 +101,22 @@
 			}
 
 
-			aside h3 {
+			aside section {
+				display: block;
+				margin-top: 1em;
+			}
+			aside h1 {
 				font-size: 15px;
 				letter-spacing: -1px;
 				color: #222;
 				padding: 0px 0px 5px 0px;
 				margin: 0px 0px 0px 0px;
 			}
-			aside h3 a {
+			aside h1 a {
 				color: #222222;
 				text-decoration: none;
 			}
-			aside h3 a:hover {
+			aside h1 a:hover {
 				color: #808080;
 			}
 			aside p {
@@ -263,6 +267,7 @@
 				color: #222;
 			}		
 			a.permalink, a.commentlink {
+				display: inline-block;
 				margin-bottom: 15px;
 				padding: 5px 10px 5px 0px;
 				text-decoration: none;
@@ -342,6 +347,7 @@
 
 			}
 			footer {
+				display: block;
 				color: #444444;
 				font-size: 10px;
 				margin-left: auto;
@@ -392,49 +398,53 @@
 
 		<h1><a href="/">{Title}</a></h1>
 		<aside>
-		<div id="avatar" style="background:#0a2939 url('{PortraitURL-128}')" ></div>
-		<br />
-		<h3>About</h3>
-		<p>{Description}</p>
-		<br />
-		<h3>Meta</h3>
-		<div id="links">
-			<ul>
-				<li><a href="/archive">Archive</a></li>
-				<li><a href="/rss">Feed</a></li>
-				<li><a href="/random">Random</a></li>
-				<li><a href="http://tumblephone.com/i5m/">Mobile</a></li>
-			</ul>
-		</div><!-- End of links -->
-		<div id="search">
-			<form action="/search" method="get">
-				<input type="text" size="15" name="q" value="{SearchQuery}"/>
-				<input type="submit" value="Search"/>
-			</form>
-		</div><!-- End of search -->
-		<br />
-		<!-- Replace the <username> tags with your twitter username -->
-		<h3><a href="http://twitter.com/i5m">Twitter</a></h3>
-		<div id="twitter">
-			<ul id="twitter_update_list">
-				<li></li>
-			</ul>
-		</div><!-- End of twitter -->
-		<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
-		<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/i5m.json?callback=twitterCallback2&amp;count=5"></script>
+			<div id="avatar" style="background:#0a2939 url('{PortraitURL-128}')" ></div>
+			
+			<section>
+				<h1>About</h1>
+				<p>{Description}</p>
+			</section>
+			<section>
+				<h1>Meta</h1>
+				<nav id="links">
+					<ul>
+						<li><a href="/archive">Archive</a></li>
+						<li><a href="/rss">Feed</a></li>
+						<li><a href="/random">Random</a></li>
+						<li><a href="http://tumblephone.com/i5m/">Mobile</a></li>
+					</ul>
+				</nav><!-- End of links -->			
+				<form action="/search" method="get">
+					<input type="text" size="15" name="q" value="{SearchQuery}"/>
+					<input type="submit" value="Search"/>
+				</form><!-- End of search -->
+			</section><!-- End of Meta -->
+		
+			<section>
+				<h1><a href="http://twitter.com/i5m">Twitter</a></h1>
+				<div id="twitter">
+					<ul id="twitter_update_list">
+						<li></li>
+					</ul>
+				</div><!-- End of twitter -->
+				<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+				<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/i5m.json?callback=twitterCallback2&amp;count=5"></script>
+			</section>
 
 
 		<!-- Start of Flickr Badge -->
-		<div id="flickr_badge_uber_wrapper"><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a>
+		
+		<section id="flickr_badge_uber_wrapper">
+		<h1><a href="http://www.flickr.com/i-5-m" id="flickr_www">Flickr</a></h1>
 			<div id="flickr_badge_wrapper">
 				<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=5&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=91098778%40N00"></script>
 			</div>
-		</div>
+		</section>
 		<!-- End of Flickr Badge -->
 
 		<!-- Last.fm -->
-		<br />
-		<h3>Last.fm</h3>
+		<section>
+		<h1><a href="http://www.last.fm/user/i5m">Last.fm</a></h1>
 		<table class="lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781" cellpadding="0" cellspacing="0" border="0" style="width:184px;">
 			<tr class="lfmHead">
 				<td><a title="i5m: Recently Listened Tracks" href="http://www.last.fm/user/i5m" target="_blank" style="display:block;overflow:hidden;height:20px;width:184px;background:url(http://cdn.last.fm/widgets/images/en/header/chart/recenttracks_regular_grey.png) no-repeat 0 -20px;text-decoration:none;border:0;"></a>
@@ -459,22 +469,26 @@
 				</td>
 			</tr>
 		</table>
+		</section>
 
 		<!-- DELICIOUS -->
-		<br />
-		<h3>Delicious</h3>
+		<section>
+		<h1><a href="http://delicious.com/i5m">Delicious</a></h1>
 		<script type="text/javascript" src="http://feeds.delicious.com/v2/js/i5m?title=Recent%20bookmarks&amp;icon=s&amp;count=5&amp;bullet=%C2%BB&amp;sort=date"></script>
+		</section>
 
 		<!-- READER-->
-		<br />
-		<h3>Reader</h3>
+		<section>
+		<h1><a href="http://www.google.com/reader/shared/i5ivem">Reader</a></h1>
 		<script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
 		<script type="text/javascript" src="http://www.google.com/reader/public/javascript/user/13578209299560015229/state/com.google/broadcast?n=5&amp;callback=GRC_p(%7Bc%3A%22gray%22%2Ct%3A%22i5m's%20shared%20items%22%2Cs%3A%22false%22%2Cb%3A%22false%22%7D)%3Bnew%20GRC"></script>
+		</section>
 
 		<!-- DELICIOUS LINKROLL-->
-		<br />
-		<h3>Linkroll</h3>
+		<section>
+		<h1><a href="http://delicious.com/i5m/linkroll">Linkroll</a></h1>
 		<script type="text/javascript" src="http://feeds.delicious.com/v2/js/i5m/linkroll?title=Linkroll&amp;icon=s&amp;count=10&amp;bullet=%C2%BB&amp;sort=alpha"></script>
+		</section>
 
 		</aside><!-- End of Sidebar -->
 
@@ -488,6 +502,7 @@
 
 			{block:Posts}
 			<article>
+			<header>
 			<a href="{Permalink}" class="permalink">
 				<time datetime="{Year}-{Month}-{DayOfMonth}T{24Hour}:{Minutes}">{Month} {DayOfMonth}, {Year} at {12Hour}:{Minutes}{AmPm}</time>
 			</a>
@@ -496,7 +511,6 @@
 			<!-- Text Post -->
 			{block:Text}
 			{block:Title}
-			<header>
 			<h1>
 				{Title}
 			</h1>
@@ -514,6 +528,7 @@
 
 				<!-- Photo Post -->
 				{block:Photo}
+				</header>
 				<div class="postcontent photo {TagsAsClasses}">
 					{LinkOpenTag}
 					<img src="{PhotoURL-500}" alt="{PhotoAlt}" />
@@ -530,6 +545,7 @@
 					{/block:Photo}
 
 					<!-- Quote Post -->
+					</header>
 					{block:Quote}
 					<div class="postcontent quote {TagsAsClasses}">
 						<div class="quote">"{Quote}"</div>
@@ -545,6 +561,7 @@
 						{/block:Quote}
 
 						<!-- Link Post -->
+						</header>
 						{block:Link}
 						<div class="postcontent link {TagsAsClasses}">
 							<div class="href">
@@ -569,7 +586,6 @@
 							<!-- Chat Post -->
 							{block:Chat}
 							{block:Title}
-							<header>
 								<h1>{Title}</h1>
 							</header>
 							{/block:Title}
@@ -589,6 +605,7 @@
 								{/block:Chat}
 
 								<!-- Audio Post -->
+								</header>
 								{block:Audio}
 								<div class="postcontent audio {TagsAsClasses}">
 									<div class="audiobox">
@@ -606,6 +623,7 @@
 									{/block:Audio}
 
 									<!-- Video Post -->
+									</header>
 									{block:Video}
 									<div class="postcontent video {TagsAsClasses}">
 										{Video-500}
