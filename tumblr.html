@@ -167,7 +167,7 @@
 				margin-left: 20px;
 				border-left: 1px solid #444444;
 			}
-			article .text_header {
+			article header h1 {
 				color: #222;
 				font-weight: normal;
 				font-size: 22px;
@@ -569,7 +569,9 @@
 							<!-- Chat Post -->
 							{block:Chat}
 							{block:Title}
-							<div class="text_header">{Title}</div>
+							<header>
+								<h1>{Title}</h1>
+							</header>
 							{/block:Title}
 							<div class="postcontent chat {TagsAsClasses}">
 								<ul>
