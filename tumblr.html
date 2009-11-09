@@ -118,11 +118,11 @@
 			aside p {
 				padding: 0px;
 			}
-			.post {
+			article {
 				margin: 0 0 20px 0;
 				/*width: 500px;*/
 			}
-			.post h2 {
+			article h2 {
 				color: #63a686;
 				font-weight: normal;
 				font-size: 22px;
@@ -130,7 +130,7 @@
 				letter-spacing: -1px;
 				margin: 0 0 8px 0;
 			}
-			.post {
+			article {
 				border-bottom:1px dotted #bbbbbb;
 				margin-bottom:4.5em;
 			}
@@ -153,21 +153,21 @@
 			.postcontent .source {
 				margin: 10px 0 0 0;
 			}
-			.post p {
+			article p {
 				margin: 0 0 10px 0;
 				line-height: 20px;
 			}
-			.post a {
+			article a {
 				text-decoration: underline;
 			}
-			.post blockquote {
+			article blockquote {
 				padding: 0 0 0 10px;
 				margin: 0 0 18px 0;
 				margin-bottom: 10px; 
 				margin-left: 20px;
 				border-left: 1px solid #444444;
 			}
-			.post .text_header {
+			article .text_header {
 				color: #222;
 				font-weight: normal;
 				font-size: 22px;
@@ -175,31 +175,31 @@
 				letter-spacing: -1px;
 				margin: 0 0 8px 0;
 			}
-			.post .quote div.quote {
+			article .quote div.quote {
 				font-size: 16px;
 				line-height: 20px;
 				font-weight: bold;
 				color: #000;
 			}
-			.post .quote div.source {
+			article .quote div.source {
 				margin: 10px 0 0 0;
 			}
-			.post .link .href {
+			article .link .href {
 				font-size: 22px;
 				line-height: 42px;
 				letter-spacing: -1px;
 			}
-			.post .link .href a {
+			article .link .href a {
 				text-decoration: none;
 				color: {color:Link};
 				padding: 0px;
 			}
-			.post .link .href a:hover {
+			article .link .href a:hover {
 				text-decoration: none;
 				color: {color:Post Link Hover};
 				padding: 0px;
 			}
-			.post .descrip ul, .post .postcontent ul, .post .descrip ol, .post .postcontent ol {
+			article .descrip ul, article .postcontent ul, article .descrip ol, article .postcontent ol {
 				padding: 0px 0px 0px 16px;
 				/* border: 1px red dashed; */
 			}
@@ -208,26 +208,26 @@
 				/* border: 1px red dashed; */
 				/* This overides the indent for lists in posts */
 			}
-			.post .chat ul {
+			article .chat ul {
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 				margin-left: 0px !important;
 			}
-			.post .chat ul li {
+			article .chat ul li {
 				padding: 4px 0px 4px 0px;
 				margin: 0 0 1px 0;
 			}
-			.post .chat ul li span.label {
+			article .chat ul li span.label {
 				font-weight: bold;
 			}
-			.post .chat ul li.odd {
+			article .chat ul li.odd {
 				background-color: #fff;
 			}
-			.post .chat ul li.even {
+			article .chat ul li.even {
 				background-color: #fff;
 			}
-			.post .audiobox {
+			article .audiobox {
 				background: #fff;
 			}
 			.post-tags li.tags ul, .post-footer li.tags ul li{
@@ -261,25 +261,23 @@
 			#previous {
 				left: 999px;
 				color: #222;
-			}
-			.permalink, .commentlink {
+			}		
+			a.permalink, a.commentlink {
 				margin-bottom: 15px;
-				padding: 0px 0px 0px 0px;
-			}
-			.permalink a, .commentlink a {
 				padding: 5px 10px 5px 0px;
 				text-decoration: none;
+
 			}
-			.permalink a {
+			a.permalink {
 				color: {color:Date};
 			}
-			.permalink a:hover {
+			a.permalink:hover {
 				color: {color:Date Hover};
 			}
-			.commentlink a {
+			a.commentlink {
 				color: #333AFF;
 			}
-			.commentlink a:hover {
+			a.commentlink:hover {
 				color: {color:Date Hover};
 			}
 			#links {
@@ -489,7 +487,7 @@
 			{/block:SearchPage}
 
 			{block:Posts}
-			<article class="post">
+			<article>
 			<a href="{Permalink}" class="permalink">
 				<time datetime="{Year}-{Month}-{DayOfMonth}T{24Hour}:{Minutes}">{Month} {DayOfMonth}, {Year} at {12Hour}:{Minutes}{AmPm}</time>
 			</a>
@@ -555,7 +553,7 @@
 							{block:Description}
 							<div class="descrip">{Description}</div>
 							{/block:Description}				
-								<a href="{Permalink}#disqus_thread" class="commentlink>Comments</a>
+								<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 							<ul class="post-tags">
 								{block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
 								{block:HasTags}<li class="tags">Tags: 
