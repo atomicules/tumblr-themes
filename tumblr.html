@@ -364,12 +364,12 @@
 			{/block:Title}
 			<div class="postcontent text {TagsAsClasses}">
 				{Body}
-					<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 				<ul class="post-tags">
 					{block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
 					{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
 				</ul>
-				<br /><br />
+				<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
+				<br />
 				{/block:Text}
 
 				<!-- Photo Post -->
@@ -382,12 +382,12 @@
 					{block:Caption}
 					<div class="source">{Caption}</div>
 					{/block:Caption}
-						<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 					<ul class="post-tags">
 						{block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
 						{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
 					</ul>
-					<br /><br />
+					<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
+					<br />
 					{/block:Photo}
 
 					<!-- Quote Post -->
@@ -398,12 +398,12 @@
 						{block:Source}
 						<div class="source">&#8212; {Source}</div>
 						{/block:Source}
-							<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 						<ul class="post-tags">
 							{block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
 							{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
 						</ul>
-						<br /><br />
+						<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
+						<br />
 						{/block:Quote}
 
 						<!-- Link Post -->
@@ -416,7 +416,6 @@
 							{block:Description}
 							<div class="descrip">{Description}</div>
 							{/block:Description}				
-								<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 							<ul class="post-tags">
 								{block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
 								{block:HasTags}<li class="tags">Tags: 
@@ -425,7 +424,8 @@
 								</ul>
 								</li>{/block:HasTags}
 							</ul>
-							<br /><br />
+							<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
+							<br />
 
 							{/block:Link}
 
@@ -442,12 +442,12 @@
 									{/block:Label}{Line}</li>
 									{/block:Lines}
 								</ul>
-									<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 								<ul class="post-tags">
 									{block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
 									{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
 								</ul>
-								<br /><br />
+								<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
+								<br />
 								{/block:Chat}
 
 								<!-- Audio Post -->
@@ -459,13 +459,13 @@
 									</div>
 									{block:Caption}
 									<div class="descrip">{Caption}</div>
-									{/block:Caption}
-										<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>							
+									{/block:Caption}						
 									<ul class="post-tags">
 										{block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
 										{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
 									</ul>
-									<br /><br />
+									<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>	
+									<br />
 									{/block:Audio}
 
 									<!-- Video Post -->
@@ -476,12 +476,12 @@
 										{block:Caption}
 										<div class="descrip">{Caption}</div>
 										{/block:Caption}									
-											<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 										<ul class="post-tags">
 											{block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
 											{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
 										</ul>
-										<br /><br />
+										<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
+										<br />
 										{/block:Video}
 
 									</div><!-- end of postcontent -->
