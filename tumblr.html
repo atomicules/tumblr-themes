@@ -53,13 +53,16 @@
 				min-width: 20em;
 				margin-top: -6em;
 			}
+			header> nav {
+				text-align: right;
+			}
 			header>form {
 				margin-top: 1em;
 			}
 			pre {
 				background-color: LightGrey;
 				border: 1px solid;
-				font-size: 0.8em;
+				font-size: 1em;
 				margin: 1em 0pt;
 				overflow-x: auto;
 				overflow-y: hidden;
@@ -112,10 +115,10 @@
 				margin: 0 0 2.0em 0;
 			}
 			article h2 {
-				color: #63a686;
+				color: #666;
 				font-weight: normal;
-				font-size: 2.2em;
-				letter-spacing: -0.1em;
+				font-size: 1.5em;
+				letter-spacing: -0.05em;
 				margin: 0 0 0.8em 0;
 			}
 			article {
@@ -156,7 +159,7 @@
 				color: #222;
 				font-weight: normal;
 				font-size: 2.2em;
-				letter-spacing: -0.1em;
+				letter-spacing: -0.05em;
 				margin: 0 0 0.8em 0;
 			}
 			article .quote div.quote {
@@ -168,7 +171,8 @@
 				margin: 1.0em 0 0 0;
 			}
 			article .link .href {
-				font-size: 2.2em;
+				font-size: 1.8em;
+				letter-spacing: -0.05em;
 			}
 			article .link .href a {
 				text-decoration: none;
@@ -221,8 +225,11 @@
 			.post-tags li{
 				display: inline;
 			}
+			.post-tags li.tags {
+				padding-right: 2em;
+			}
 			.post-tags li.tags ul li {
-				margin-left: 0.4em;
+				margin-left: -1.0em;
 				text-align: left;
 			}
 
