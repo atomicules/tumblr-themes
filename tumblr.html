@@ -20,41 +20,41 @@
 		<meta name="color:Date" content="#909090"/>
 		<meta name="color:Date Hover" content="#444444"/>
 		<style type="text/css">
+			/*whilst editing 
+			body, #main, aside, footer {
+				border: 1px dotted red;
+			}*/
 			* {
 				margin: 0;
 				padding: 0;
 			}
 			html {
-				margin: 40px;
+				margin: 3em;
 				background: {color:Background};  
 
 			}
 			body {
-				font: 12px 'Lucida Grande', Gill Sans MT, sans-serif;
+				font: 0.8em 'Lucida Grande', Gill Sans MT, sans-serif;
 				margin: 0px;
-				padding: 10px;
+				padding: 1em;
 				background: #fff;
-				min-width: 700px;
+				min-width: 51em;
 			}
 			#main {
-				width: 72%;
-				padding: 10px;
+				padding: 1em;
 				margin-left: 25%;
-				min-width: 500px;
-				/* whilst editing
-				border: 1px dotted red;*/
-
+				max-width: 50em;
 			}
-			aside {
-				float: left;
-				width: 24%;
+			header>hgroup>h2, header>nav {
+				float: right;			
 				background: #fff;
 				padding: 0px;
 				margin: 0px;
-				/* whilst editing
-				border: 1px dotted black;*/
-				min-width: 200px;
-
+				min-width: 20em;
+				margin-top: -6em;
+			}
+			header>form {
+				margin-top: 1em;
 			}
 			pre {
 				background-color: LightGrey;
@@ -89,13 +89,10 @@
 			}
 
 			h1 {
-				font: 4em 'Lucida Grande', Gill Sans MT, sans-serif;
-				padding: 0px 0px 0px 0px;
-				margin: 0px 0px 0px 0px;
+				font: 4em 'Lucida Grande', Gill Sans MT, sans-serif;			
 				color: {color:Title};
 			}
-			h1#avatar {
-				/*background-color: #0a2939; */
+			h1#avatar {			
 				background-image: url('{PortraitURL-128}');
 				background-repeat: no-repeat;
 			}
@@ -111,50 +108,24 @@
 			h1 a:hover {
 				color: {color:Title Hover};
 			}
-
-
-			aside section {
-				display: block;
-				margin-top: 1em;
-			}
-			aside h1 {
-				font-size: 15px;
-				letter-spacing: -1px;
-				color: #222;
-				padding: 0px 0px 5px 0px;
-				margin: 0px 0px 0px 0px;
-			}
-			aside h1 a {
-				color: #222222;
-				text-decoration: none;
-			}
-			aside h1 a:hover {
-				color: #808080;
-			}
-			aside p {
-				padding: 0px;
-			}
 			article {
-				margin: 0 0 20px 0;
-				/*width: 500px;*/
+				margin: 0 0 2.0em 0;
 			}
 			article h2 {
 				color: #63a686;
 				font-weight: normal;
-				font-size: 22px;
-				line-height: 24px;
-				letter-spacing: -1px;
-				margin: 0 0 8px 0;
+				font-size: 2.2em;
+				/*line-height: 2.4em;*/
+				letter-spacing: -0.1em;
+				margin: 0 0 0.8em 0;
 			}
 			article {
 				border-bottom:1px dotted #bbbbbb;
 				margin-bottom:4.5em;
 			}
-			.postcontent {
-				/*width: 500px;
-				float: left; */
-				font-size: 12px;
-				line-height: 16px;
+			.postcontent {				
+				font-size: 1.2em;
+				/*line-height: 1.6em;*/
 				color: #333;
 			}
 			.postcontent a {
@@ -167,43 +138,43 @@
 			}
 			.postcontent .descrip,
 			.postcontent .source {
-				margin: 10px 0 0 0;
+				margin: 1.0em 0 0 0;
 			}
 			article p {
-				margin: 0 0 10px 0;
-				line-height: 20px;
+				margin: 0 0 1.0em 0;
+				line-height: 1.3em;
 			}
 			article a {
 				text-decoration: underline;
 			}
 			article blockquote {
-				padding: 0 0 0 10px;
-				margin: 0 0 18px 0;
-				margin-bottom: 10px; 
-				margin-left: 20px;
+				padding: 0 0 0 1.0em;
+				margin: 0 0 1.8em 0;
+				margin-bottom: 1.0em; 
+				margin-left: 2.0em;
 				border-left: 1px solid #444444;
 			}
 			article header h1 {
 				color: #222;
 				font-weight: normal;
-				font-size: 22px;
-				line-height: 24px;
-				letter-spacing: -1px;
-				margin: 0 0 8px 0;
+				font-size: 2.2em;
+				/*line-height: 2.4em;*/
+				letter-spacing: -0.1em;
+				margin: 0 0 0.8em 0;
 			}
 			article .quote div.quote {
-				font-size: 16px;
-				line-height: 20px;
+				font-size: 1.6em;
+				/*line-height: 2.0em;*/
 				font-weight: bold;
 				color: #000;
 			}
 			article .quote div.source {
-				margin: 10px 0 0 0;
+				margin: 1.0em 0 0 0;
 			}
 			article .link .href {
-				font-size: 22px;
-				line-height: 42px;
-				letter-spacing: -1px;
+				font-size: 2.2em;
+				/*line-height: 4.2em;*/
+				/*letter-spacing: -0.1em;*/
 			}
 			article .link .href a {
 				text-decoration: none;
@@ -216,11 +187,11 @@
 				padding: 0px;
 			}
 			article .descrip ul, article .postcontent ul, article .descrip ol, article .postcontent ol {
-				padding: 0px 0px 0px 16px;
+				padding: 0px 0px 0px 1.6em;
 				/* border: 1px red dashed; */
 			}
 			ul.post-tags {
-				margin-left: -15px !important;
+				margin-left: -1.5em !important;
 				/* border: 1px red dashed; */
 				/* This overides the indent for lists in posts */
 			}
@@ -231,8 +202,8 @@
 				margin-left: 0px !important;
 			}
 			article .chat ul li {
-				padding: 4px 0px 4px 0px;
-				margin: 0 0 1px 0;
+				padding: 0.4em 0px 0.4em 0px;
+				margin: 0 0 0.1em 0;
 			}
 			article .chat ul li span.label {
 				font-weight: bold;
@@ -251,8 +222,8 @@
 			}
 			.post-tags{
 				list-style: none;
-				font-size: 12px;
-				margin-top: 20px;
+				font-size: 0.8em;
+				margin-top: 2.0em;
 				color: #808080;
 			}
 			.post-tags li{
@@ -267,8 +238,8 @@
 				position: relative;
 				display: inline;
 				left: 0px;
-				padding: 15px;
-				font-size: 15px;
+				padding: 1.5em;
+				font-size: 1.5em;
 			}
 			#next {
 				left: 999px;
@@ -280,8 +251,8 @@
 			}		
 			a.permalink, a.commentlink {
 				display: inline-block;
-				margin-bottom: 15px;
-				padding: 5px 10px 5px 0px;
+				margin-bottom: 1.5em;
+				padding: 0.5em 1.0em 0.5em 0em;
 				text-decoration: none;
 
 			}
@@ -298,9 +269,9 @@
 				color: {color:Date Hover};
 			}
 			#links {
-				font-size: 11px;
-				margin-bottom: 10px;
-				line-height: 20px;
+				font-size: 1.1em;
+				margin-bottom: 1.0em;
+				line-height: 2.0em;
 			}
 			#links ul {
 				padding-left: 0px;
@@ -310,43 +281,27 @@
 			#links li {
 				display: inline;
 				list-style: none;
-				margin-right: 15px;
+				margin-right: 0.5em;
 			}
-
 			#links li a {
-				padding-bottom: 2px;
+				padding-bottom: 0.2em;
 			}
-			.following{
-				margin-top: 5px;
-				margin-bottom: 5px;
-			}
-			.following a img{
-				border: 1px solid #222;
-				padding: 1px;
-				margin: 1px;
-			}
-			.following a img:hover{
-				border: 1px solid #808080;
-				padding: 1px;
-				margin: 1px;
 			}			
 			#dsq-comments {
 				margin-top: 0px;
 				padding-top: 0px;
-
 			}
 			footer {
 				display: block;
 				color: #444444;
-				font-size: 10px;
+				font-size: 1.0em;
 				margin-left: auto;
 				margin-right: auto;
 				text-align: center;
-				margin-bottom: -40px;
+				margin-bottom: -4.0em;
 				width: 100%;
-				padding-top: 20px;
+				padding-top: 2.0em;
 				clear: both;
-				/* border: 1px red dotted; */
 			}
 			footer a {
 				text-decoration: underline;
@@ -360,76 +315,28 @@
 				border-radius:15px;
 				text-decoration:none;
 			}
-			
-
-			table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 td {margin:0 !important;padding:0 !important;border:0 !important;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmHead a:hover {background:url(http://cdn.last.fm/widgets/images/en/header/chart/recenttracks_regular_grey.png) no-repeat 0 0 !important;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmEmbed object {float:left;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmFoot td.lfmConfig a:hover {background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat 0px 0 !important;;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmFoot td.lfmView a:hover {background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -85px 0 !important;}table.lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781 tr.lfmFoot td.lfmPopup a:hover {background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -159px 0 !important;}
-
+					
 		</style>
 	</head>
 	<body>
-
-
-
-		<h1 id="avatar"><a href="/">{Title}</a></h1>
-		<aside>
-			
-			<section>
-				<h1>About</h1>
-				<p>{Description}</p>
-			</section>
-			<section>
-				<h1>Meta</h1>
-				<nav id="links">
-					<ul>
-						<li><a href="/archive">Archive</a></li>
-						<li><a href="/random">Random</a></li>
-						<li><a href="http://tumblephone.com/i5m/">Mobile</a></li>
-						<li><a href="http://www.google.com/profiles/i5ivem#buzz" rel="me">Buzz</a></li>
-					</ul>
-				</nav><!-- End of links -->			
-				<form action="/search" method="get">
-					<input type="text" size="15" name="q" value="{SearchQuery}"/>
-					<input type="submit" value="Search"/>
-				</form><!-- End of search -->
-			</section><!-- End of Meta -->
-		
-		
-
-
-	
-
-		<!-- Last.fm -->
-		<section>
-		<h1><a href="http://www.last.fm/user/i5m">Last.fm</a></h1>
-		<table class="lfmWidgetchart_9ed8952f75e79f48db6b40087e40b781" style="width:184px;">
-			<tr class="lfmHead">
-				<td><a title="i5m: Recently Listened Tracks" href="http://www.last.fm/user/i5m" target="_blank" style="display:block;overflow:hidden;height:20px;width:184px;background:url(http://cdn.last.fm/widgets/images/en/header/chart/recenttracks_regular_grey.png) no-repeat 0 -20px;text-decoration:none;border:0;"></a>
-				</td>
-			</tr>
-			<tr class="lfmEmbed">
-				<td><object type="application/x-shockwave-flash" data="http://cdn.last.fm/widgets/chart/19.swf" id="lfmEmbed_1841502766" width="184" height="179"> <param name="movie" value="http://cdn.last.fm/widgets/chart/19.swf" /> <param name="flashvars" value="type=recenttracks&amp;user=i5m&amp;theme=grey&amp;lang=en&amp;widget_id=chart_9ed8952f75e79f48db6b40087e40b781" /> <param name="allowScriptAccess" value="always" /> <param name="allowNetworking" value="all" /> <param name="allowFullScreen" value="true" /> <param name="quality" value="high" /> <param name="bgcolor" value="999999" /> <param name="wmode" value="transparent" /> <param name="menu" value="true" /> </object>
-				</td>
-			</tr>
-			<tr class="lfmFoot">
-				<td style="background:url(http://cdn.last.fm/widgets/images/footer_bg/grey.png) repeat-x 0 0;text-align:right;">
-					<table style="width:184px;">
-						<tr>
-							<td class="lfmConfig"><a href="http://www.last.fm/widgets/?colour=grey&amp;chartType=recenttracks&amp;user=i5m&amp;chartFriends=0&amp;from=code&amp;widget=chart" title="Get your own widget" target="_blank" style="display:block;overflow:hidden;width:85px;height:20px;float:right;background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat 0px -20px;text-decoration:none;border:0;"></a>
-							</td>
-							<td class="lfmView" style="width:74px;"><a href="http://www.last.fm/user/i5m" title="View i5m's profile" target="_blank" style="display:block;overflow:hidden;width:74px;height:20px;background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -85px -20px;text-decoration:none;border:0;"></a>
-							</td>
-							<td class="lfmPopup" style="width:25px;"><a href="http://www.last.fm/widgets/popup/?colour=grey&amp;chartType=recenttracks&amp;user=i5m&amp;chartFriends=0&amp;from=code&amp;widget=chart&amp;resize=1" title="Load this chart in a pop up" target="_blank" style="display:block;overflow:hidden;width:25px;height:20px;background:url(http://cdn.last.fm/widgets/images/en/footer/grey.png) no-repeat -159px -20px;text-decoration:none;border:0;" onclick="window.open(this.href + '&amp;resize=0','lfm_popup','height=279,width=234,resizable=yes,scrollbars=yes'); return false;"></a>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		</section>
-
-	
-
-		</aside><!-- End of Sidebar -->
+		<header>
+			<hgroup>
+				<h1 id="avatar"><a href="/">{Title}</a></h1>
+				<h2>{Description}</h2>
+			</hgroup>
+			<nav id="links">
+				<ul>
+					<li><a href="/archive">Archive</a></li>
+					<li><a href="/random">Random</a></li>
+					<li><a href="http://tumblephone.com/i5m/">Mobile</a></li>
+					<li><a href="http://www.google.com/profiles/i5ivem#buzz" rel="me">Buzz</a></li>
+				</ul>
+			</nav><!-- End of links -->			
+			<form action="/search" method="get">
+				<input type="text" size="15" name="q" value="{SearchQuery}"/>
+				<input type="submit" value="Search"/>
+			</form><!-- End of search -->
+		</header><!-- End of Side/Top bar -->
 
 		<!-- TUMBLR POSTS -->
 		<div id="main">
