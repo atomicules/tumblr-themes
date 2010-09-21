@@ -7,13 +7,17 @@
 		<link rel="shortcut icon" href="{Favicon}" />
 		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
 		<link rel="me" type="text/html" href="http://www.google.com/profiles/i5ivem" /> 
-		<meta name="color:Background" content="#FFFFFF"/>
-		<meta name="color:Title" content="#222222"/>
-		<meta name="color:Title Hover" content="#222222"/>
-		<meta name="Hover" content="#808080"/>
-		<meta name="color:Link" content="#444444"/>
-		<meta name="color:Link Hover" content="#808080"/>
-		<meta name="color:Post Link Hover" content="444444"/>
+		<meta name="color:Page border" content="#FFFFFF"/>
+		<meta name="color:Header background" content="#FF0000"/>
+		<meta name="color:Header text" content="#FFFFFF"/>
+		<meta name="color:Body background" content="#ECFD31"/>
+		<meta name="color:Body text" content="#1616FC"/>
+		<meta name="color:Footer background" content="#1616FC"/>
+		<meta name="color:Footer text" content="#FFFFFF"/>
+		<meta name="color:Header link" content="#444444"/>
+		<meta name="color:Header link hover" content="#808080"/>
+		<meta name="color:Body link" content="444444"/>
+		<meta name="color:Body link hover" content="444444"/>
 		<meta name="color:Date" content="#909090"/>
 		<meta name="color:Date Hover" content="#444444"/>
 		<style type="text/css">
@@ -27,43 +31,45 @@
 			}
 			html {
 				margin: 3em;
-				background: {color:Background};  
+				background: {color:Page border};  
 
+			}
+			body>header {
+				width: 100%;
+				background: {color:Header background};
+				padding: 0px;
+				margin: 0px;			
+				text-align: center;
+				border-top-left-radius: 3em;
+				border-top-right-radius: 3em;
 			}
 			body {
 				font: 0.8em 'Lucida Grande', Gill Sans MT, sans-serif;
 				margin: 0px;
-				padding: 1em;
-				background: #fff;
+				padding: 0px;
+				background: {color:Body background};
 				min-width: 53em; /*fits tagline and photos*/
+				border-radius: 3em;
+			}
+			body>footer {
+				background: {color:Footer background};
+				color: {color:Footer text};
+				font-size: 1.0em;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+				width: 100%;
+				border-bottom-left-radius: 3em;
+				border-bottom-right-radius: 3em;
+			}
+			footer a {
+				text-decoration: underline;
+				color: {color:Footer text};
 			}
 			#main {
 				padding: 1em;
-				margin-left: 25%;
 				max-width: 50em;
 			}
-			header>hgroup>h2, header>nav {
-				float: right;			
-				background: #fff;
-				padding: 0px;
-				margin: 0px;			
-				margin-top: -6em;
-				text-align: right;
-			}	
-			header>form {
-				margin-top: 1em;
-			}
-			pre {
-				background-color: LightGrey;
-				border: 1px solid;
-				font-size: 1em;
-				margin: 1em 0pt;
-				overflow-x: auto;
-				overflow-y: hidden;
-				padding 0.25em;
-				padding-bottom: 2em;
-			}
-
 			a {
 				outline: none;
 				color: {color:Link};
@@ -88,21 +94,12 @@
 				font: 4em 'Lucida Grande', Gill Sans MT, sans-serif;			
 				color: {color:Title};
 			}
-			h1#avatar {			
-				background-image: url('{PortraitURL-128}');
-				background-repeat: no-repeat;
-			}
 			h1, h1 a {
 				text-decoration: none !important;
-			}
-			h1#avatar a {
-				position: relative;
-				left: 25px;
-				top: 30px;
-				color: {color:Title};
+				color: {color:Header text};
 			}
 			h1 a:hover {
-				color: {color:Title Hover};
+				color: {color:Header text};
 			}
 			article {
 				margin: 0 0 2.0em 0;
@@ -230,20 +227,23 @@
 				padding-right: 0.5em;
 			}
 
-			#prev-next {
-				position: relative;
-				display: inline;
-				left: 0px;
+			#top-prev-next, #bottom-prev-next {
 				padding: 1.5em;
-				font-size: 1.5em;
+				font-size: 3em;
 			}
-			#next {
-				left: 999px;
-				color: #222;
+			#top-prev-next a, #bottom-prev-nex a {
+				text-decoration: none;
 			}
-			#previous {
-				left: 999px;
-				color: #222;
+			#top-prev-next {
+				top: 1em;
+			}
+			#bottom-next, #top-next {
+				right: 3em;
+				position: absolute;
+			}
+			#bottom-prev, #top-prev {
+				left: 3em;
+				position: absolute;
 			}		
 			a.permalink, a.commentlink {
 				display: inline-block;
@@ -282,55 +282,25 @@
 			#links li a {
 				padding-bottom: 0.2em;
 			}
-			}			
-			#dsq-comments {
-				margin-top: 0px;
-				padding-top: 0px;
-			}
-			footer {
-				display: block;
-				color: #444444;
-				font-size: 1.0em;
-				margin-left: auto;
-				margin-right: auto;
-				text-align: center;
-				margin-bottom: -4.0em;
-				width: 100%;
-				padding-top: 2.0em;
-				clear: both;
-			}
-			footer a {
-				text-decoration: underline;
-			}
-			#avatar {
-				height: 128px; width: 128px;
-				border: 1px; border-color: transparent;
-				-moz-border-radius:15px;
-				-webkit-border-radius:15px;
-				-opera-border-radius:15px;
-				border-radius:15px;
-				text-decoration:none;
-			}
+			
 					
 		</style>
 	</head>
 	<body>
 		<header>
 			<hgroup>
-				<h1 id="avatar"><a href="/">{Title}</a></h1>
+				<h1><a href="/">{Title}</a></h1>
 				<h2>{Description}</h2>
 			</hgroup>
-			<nav id="links">
-				<ul>
-					<li><a href="/archive">Archive</a></li>
-					<li><a href="/random">Random</a></li>
-					<li><a href="/about">About</a></li>
-				</ul>
-			</nav><!-- End of links -->			
-			<form action="/search" method="get">
-				<input type="text" size="15" name="q" value="{SearchQuery}"/>
-				<input type="submit" value="Search"/>
-			</form><!-- End of search -->
+			<!-- Page Navigation -->
+			<nav id="top-prev-next" class="autopagerize_insert_before">
+				{block:PreviousPage}
+				<a id="top-prev" href="{PreviousPage}" title="Previous page">&#171;</a>
+				{/block:PreviousPage}
+				{block:NextPage}
+				<a id="top-next" href="{NextPage}" title="Next page">&#187;</a>
+				{/block:NextPage}
+			</nav><!-- End of prev-next Page Navigation -->
 		</header><!-- End of Side/Top bar -->
 
 		<!-- TUMBLR POSTS -->
@@ -357,11 +327,10 @@
 			</h1>
 			</header>
 			{/block:Title}
-			<div class="postcontent text {TagsAsClasses}">
+			<div class="postcontent text">
 				{Body}
-				<ul class="post-tags">
 					{block:ContentSource}
-						<li class="tags">
+						<small class="attribution">
 							<a href="{SourceURL}">
 								{lang:Source}:
 								{block:SourceLogo}
@@ -372,43 +341,48 @@
 									{SourceLink}
 								{/block:NoSourceLogo}
 							</a>
-						</li>
+						</small>
 					{/block:ContentSource}
-					{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
-				</ul>
-				<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 				<br />
 				{/block:Text}
 
 				<!-- Photo Post -->
 				{block:Photo}
 				</header>
-				<div class="postcontent photo {TagsAsClasses}">
+				<div class="postcontent photo">
 					{LinkOpenTag}
 					<img src="{PhotoURL-500}" alt="{PhotoAlt}" />
 					{LinkCloseTag}
 					{block:Caption}
 					<div class="source">{Caption}</div>
 					{/block:Caption}
-					<ul class="post-tags">
-						{block:RebloggedFrom}<li class="tags"><i>Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a></i></li>{/block:RebloggedFrom}
-						{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
-					</ul>
-					<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
+					{block:ContentSource}
+						<small class="attribution">
+							<a href="{SourceURL}">
+								{lang:Source}:
+								{block:SourceLogo}
+									<img src="{BlackLogoURL}" width="{LogoWidth}"
+									height="{LogoHeight}" alt="{SourceTitle}" />
+								{/block:SourceLogo}
+								{block:NoSourceLogo}
+									{SourceLink}
+								{/block:NoSourceLogo}
+							</a>
+						</small>
+					{/block:ContentSource}
 					<br />
 					{/block:Photo}
 
 					<!-- Quote Post -->
 					{block:Quote}
 					</header>
-					<div class="postcontent quote {TagsAsClasses}">
-						<div class="quote">"{Quote}"</div>
+					<div class="postcontent quote">
+						<blockquote class="quote" cite={Source}>"{Quote}"</blockquote>
 						{block:Source}
-						<div class="source">&#8212; {Source}</div>
+						<small class="source">&#8212; {Source}</small>
 						{/block:Source}
-						<ul class="post-tags">
 							{block:ContentSource}
-								<li class="tags">
+								<small class="attribution">
 									<a href="{SourceURL}">
 										{lang:Source}:
 										{block:SourceLogo}
@@ -419,27 +393,24 @@
 											{SourceLink}
 										{/block:NoSourceLogo}
 									</a>
-								</li>
+								</small>
 							{/block:ContentSource}
-							{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
-						</ul>
-						<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 						<br />
 						{/block:Quote}
 
 						<!-- Link Post -->
 						{block:Link}
 						</header>
-						<div class="postcontent link {TagsAsClasses}">
+						<div class="postcontent link">
 							<div class="href">
-								<a href="{URL}" {Target}>&#187; {Name}</a>
+								<a href="{URL}" {Target}>{Name}</a>
 							</div>
 							{block:Description}
 							<div class="descrip">{Description}</div>
 							{/block:Description}				
 							<ul class="post-tags">
 								{block:ContentSource}
-									<li class="tags">
+									<small class="attribution">
 										<a href="{SourceURL}">
 											{lang:Source}:
 											{block:SourceLogo}
@@ -450,7 +421,7 @@
 												{SourceLink}
 											{/block:NoSourceLogo}
 										</a>
-									</li>
+									</small>
 								{/block:ContentSource}
 								{block:HasTags}<li class="tags">Tags: 
 								<ul>{block:Tags}
@@ -458,7 +429,6 @@
 								</ul>
 								</li>{/block:HasTags}
 							</ul>
-							<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 							<br />
 
 							{/block:Link}
@@ -469,7 +439,7 @@
 								<h1>{Title}</h1>
 							</header>
 							{/block:Title}
-							<div class="postcontent chat {TagsAsClasses}">
+							<div class="postcontent chat">
 								<ul>
 									{block:Lines}
 									<li class="{Alt}">{block:Label}<span class="label">{Label}</span>
@@ -478,7 +448,7 @@
 								</ul>
 								<ul class="post-tags">
 									{block:ContentSource}
-										<li class="tags">
+										<small class="attribution">
 											<a href="{SourceURL}">
 												{lang:Source}:
 												{block:SourceLogo}
@@ -489,18 +459,16 @@
 													{SourceLink}
 												{/block:NoSourceLogo}
 											</a>
-										</li>
+										</small>
 									{/block:ContentSource}
-									{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
 								</ul>
-								<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 								<br />
 								{/block:Chat}
 
 								<!-- Audio Post -->
 								{block:Audio}
 								</header>
-								<div class="postcontent audio {TagsAsClasses}">
+								<div class="postcontent audio">
 									<div class="audiobox">
 										<center>{AudioPlayerBlack}</center>
 									</div>
@@ -509,7 +477,7 @@
 									{/block:Caption}						
 									<ul class="post-tags">
 										{block:ContentSource}
-											<li class="tags">
+											<small class="attribution">
 												<a href="{SourceURL}">
 													{lang:Source}:
 													{block:SourceLogo}
@@ -520,25 +488,23 @@
 														{SourceLink}
 													{/block:NoSourceLogo}
 												</a>
-											</li>
+											</small>
 										{/block:ContentSource}
-										{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
 									</ul>
-									<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>	
 									<br />
 									{/block:Audio}
 
 									<!-- Video Post -->
 									{block:Video}
 									</header>
-									<div class="postcontent video {TagsAsClasses}">
+									<div class="postcontent video">
 										{Video-500}
 										{block:Caption}
 										<div class="descrip">{Caption}</div>
 										{/block:Caption}									
 										<ul class="post-tags">
 											{block:ContentSource}
-												<li class="tags">
+												<small class="attribution">
 													<a href="{SourceURL}">
 														{lang:Source}:
 														{block:SourceLogo}
@@ -549,11 +515,9 @@
 															{SourceLink}
 														{/block:NoSourceLogo}
 													</a>
-												</li>
+												</small>
 											{/block:ContentSource}
-											{block:HasTags}<li class="tags">Tags: <ul>{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}</ul></li>{/block:HasTags}
 										</ul>
-										<a href="{Permalink}#disqus_thread" class="commentlink">Comments</a>
 										<br />
 										{/block:Video}
 
@@ -564,50 +528,38 @@
 									</article><!-- end of posts -->
 									{/block:Posts}
 
-									{block:Permalink}
-									<script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
-									<div id="disqus_thread"></div><script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/i5m/embed.js"></script>
-									<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-									{/block:Permalink}
-									<script type="text/javascript">
-										//<![CDATA[
-										(function() {
-											var links = document.getElementsByTagName('a');
-											var query = '?';
-											for(var i = 0; i < links.length; i++) {
-												if(links[i].href.indexOf('#disqus_thread') >= 0) {
-													query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-												}
-											}
-											document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/i5m/get_num_replies.js' + query + '"></' + 'script>');
-											})();
-//]]>
-</script>
+									
 
 
-<!-- Page Navigation -->
-<nav id="prev-next" class="autopagerize_insert_before">
-{block:PreviousPage}
-<a id="previous" href="{PreviousPage}">&#171; previous</a>
-{/block:PreviousPage}&nbsp;
-{CurrentPage} of {TotalPages}&nbsp;
-{block:NextPage}
-<a id="next" href="{NextPage}">next &#187;</a>
-{/block:NextPage}
-</nav><!-- End of prev-next Page Navigation -->
+
 
 </div> <!-- End of main -->
 
 <footer>
-All original content (where no source is specified) is: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a>
+	
+	<!-- Page Navigation -->
+	<nav id="bottom-prev-next" class="autopagerize_insert_before">
+		{block:PreviousPage}
+		<a id="bottom-prev" href="{PreviousPage}" title="Previous page">&#171;</a>
+		{/block:PreviousPage}
+		{block:NextPage}
+		<a id="bottom-next" href="{NextPage}" title="Next page">&#187;</a>
+		{/block:NextPage}
+	</nav><!-- End of prev-next Page Navigation -->
+	<nav id="links">
+		<ul>
+			<li><a href="/archive">Archive</a></li>
+			<li><a href="/random">Random</a></li>
+			<li><a href="/about">About</a></li>
+		</ul>
+	</nav><!-- End of links -->	
+	<form action="/search" method="get">
+		<input type="text" size="15" name="q" value="{SearchQuery}"/>
+		<input type="submit" value="Search"/>
+	</form><!-- End of search -->
+	<p>All original content (where no source is specified) is: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></p>
 </footer>
 
 
 </body>
 </html>
-
-
-
-
-
-
