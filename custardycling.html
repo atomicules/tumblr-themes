@@ -11,13 +11,10 @@
 		<meta name="color:Header background" content="#FF0000"/>
 		<meta name="color:Header text" content="#FFFFFF"/>
 		<meta name="color:Body background" content="#ECFD31"/>
-		<meta name="color:Body text" content="#1616FC"/>
-		<meta name="color:Footer background" content="#1616FC"/>
+		<meta name="color:Footer background and Body text" content="#1616FC"/>
 		<meta name="color:Footer text" content="#FFFFFF"/>
 		<meta name="color:Header link" content="#444444"/>
 		<meta name="color:Header link hover" content="#808080"/>
-		<meta name="color:Body link" content="444444"/>
-		<meta name="color:Body link hover" content="444444"/>
 		<meta name="color:Date" content="#909090"/>
 		<meta name="color:Date Hover" content="#444444"/>
 		<style type="text/css">
@@ -52,7 +49,7 @@
 				border-radius: 3em;
 			}
 			body>footer {
-				background: {color:Footer background};
+				background: {color:Footer background and Body text};
 				color: {color:Footer text};
 				font-size: 1.0em;
 				margin-left: auto;
@@ -92,9 +89,8 @@
 
 			h1 {
 				font: 4em 'Lucida Grande', Gill Sans MT, sans-serif;			
-				color: {color:Title};
 			}
-			h1, h1 a {
+			h1, h1 a, h2 {
 				text-decoration: none !important;
 				color: {color:Header text};
 			}
@@ -102,22 +98,12 @@
 				color: {color:Header text};
 			}
 			article {
-				margin: 0 0 2.0em 0;
+				margin: 0 0 4.5em 0;
 			}
-			article h2 {
-				color: #666;
-				font-weight: normal;
-				font-size: 1.5em;
-				letter-spacing: -0.05em;
-				margin: 0 0 0.8em 0;
-			}
-			article {
-				border-bottom:1px dotted #bbbbbb;
-				margin-bottom:4.5em;
-			}
+			
 			.postcontent {				
 				font-size: 1.2em;
-				color: #333;
+				color: {color:Footer background and Body text};
 			}
 			.postcontent a {
 				text-decoration: underline;
@@ -125,10 +111,10 @@
 			}
 			.postcontent a:hover {
 				text-decoration: underline;
-				color: {color:Link Hover};
+				color: {color:Body background};
+				background: {color:Footer background and Body text}
 			}
-			.postcontent .descrip,
-			.postcontent .source {
+			.postcontent .descrip,,.postcontent .source {
 				margin: 1.0em 0 0 0;
 			}
 			article p {
@@ -146,12 +132,20 @@
 				border-left: 1px solid #444444;
 			}
 			article header h1 {
-				color: #222;
+				color: {color:Footer background and Body text};
 				font-weight: normal;
 				font-size: 2.2em;
 				letter-spacing: -0.05em;
 				margin: 0 0 0.8em 0;
 			}
+			article h2 {
+				color: {color:Footer background and Body text};
+				font-weight: normal;
+				font-size: 1.5em;
+				letter-spacing: -0.05em;
+				margin: 0 0 0.8em 0;
+			}
+			/*Various post type styles*/
 			article .quote div.quote {
 				font-size: 1.6em;
 				font-weight: bold;
@@ -160,6 +154,7 @@
 			article .quote div.source {
 				margin: 1.0em 0 0 0;
 			}
+			/*LINK*/
 			article .link .href {
 				font-size: 1.8em;
 				letter-spacing: -0.05em;
@@ -174,13 +169,13 @@
 				color: {color:Post Link Hover};
 				padding: 0px;
 			}
+			article .link .href a:before {
+				content: "LINK: ";			
+			}
 			article .descrip ul, article .postcontent ul, article .descrip ol, article .postcontent ol {
 				padding: 0px 0px 0px 1.6em;
 			}
-			ul.post-tags {
-				margin-left: -1.5em !important;
-				/* This overides the indent for lists in posts */
-			}
+			/*CHAT*/
 			article .chat ul {
 				list-style-type: none;
 				margin: 0;
@@ -194,39 +189,6 @@
 			article .chat ul li span.label {
 				font-weight: bold;
 			}
-			article .chat ul li.odd {
-				background-color: #fff;
-			}
-			article .chat ul li.even {
-				background-color: #fff;
-			}
-			article .audiobox {
-				background: #fff;
-			}
-			.post-tags li.tags ul, .post-footer li.tags ul li{
-				display: inline; 
-			}
-			.post-tags li.tags ul{
-				margin-left: -1.5em;
-				padding-left: 0em;
-			}
-			.post-tags{
-				list-style: none;
-				font-size: 0.8em;
-				margin-top: 2.0em;
-				color: #808080;
-			}
-			.post-tags li{
-				display: inline;
-			}
-			.post-tags li.tags {
-				padding-right: 2em;
-			}
-			.post-tags li.tags ul li {
-				text-align: left;
-				padding-right: 0.5em;
-			}
-
 			#top-prev-next, #bottom-prev-next {
 				padding: 1.5em;
 				font-size: 3em;
@@ -245,7 +207,7 @@
 				left: 3em;
 				position: absolute;
 			}		
-			a.permalink, a.commentlink {
+			a.permalink {
 				display: inline-block;
 				margin-bottom: 1.5em;
 				padding: 0.5em 1.0em 0.5em 0em;
@@ -258,12 +220,7 @@
 			a.permalink:hover {
 				color: {color:Date Hover};
 			}
-			a.commentlink {
-				color: #333AFF;
-			}
-			a.commentlink:hover {
-				color: {color:Date Hover};
-			}
+		
 			#links {
 				font-size: 1.1em;
 				margin-bottom: 1.0em;
@@ -329,20 +286,20 @@
 			{/block:Title}
 			<div class="postcontent text">
 				{Body}
-					{block:ContentSource}
-						<small class="attribution">
-							<a href="{SourceURL}">
-								{lang:Source}:
-								{block:SourceLogo}
-									<img src="{BlackLogoURL}" width="{LogoWidth}"
-									height="{LogoHeight}" alt="{SourceTitle}" />
-								{/block:SourceLogo}
-								{block:NoSourceLogo}
-									{SourceLink}
-								{/block:NoSourceLogo}
-							</a>
-						</small>
-					{/block:ContentSource}
+				{block:ContentSource}
+					<small class="attribution">
+						<a href="{SourceURL}">
+							{lang:Source}:
+							{block:SourceLogo}
+								<img src="{BlackLogoURL}" width="{LogoWidth}"
+								height="{LogoHeight}" alt="{SourceTitle}" />
+							{/block:SourceLogo}
+							{block:NoSourceLogo}
+								{SourceLink}
+							{/block:NoSourceLogo}
+						</a>
+					</small>
+				{/block:ContentSource}
 				<br />
 				{/block:Text}
 
@@ -381,6 +338,33 @@
 						{block:Source}
 						<small class="source">&#8212; {Source}</small>
 						{/block:Source}
+						{block:ContentSource}
+							<small class="attribution">
+								<a href="{SourceURL}">
+									{lang:Source}:
+									{block:SourceLogo}
+										<img src="{BlackLogoURL}" width="{LogoWidth}"
+										height="{LogoHeight}" alt="{SourceTitle}" />
+									{/block:SourceLogo}
+									{block:NoSourceLogo}
+										{SourceLink}
+									{/block:NoSourceLogo}
+								</a>
+							</small>
+						{/block:ContentSource}
+						<br />
+						{/block:Quote}
+
+						<!-- Link Post -->
+						{block:Link}
+						</header>
+						<div class="postcontent link">
+							<div class="href">
+								<a href="{URL}" {Target}>{Name}</a>
+							</div>
+							{block:Description}
+							<div class="descrip">{Description}</div>
+							{/block:Description}				
 							{block:ContentSource}
 								<small class="attribution">
 									<a href="{SourceURL}">
@@ -395,40 +379,6 @@
 									</a>
 								</small>
 							{/block:ContentSource}
-						<br />
-						{/block:Quote}
-
-						<!-- Link Post -->
-						{block:Link}
-						</header>
-						<div class="postcontent link">
-							<div class="href">
-								<a href="{URL}" {Target}>{Name}</a>
-							</div>
-							{block:Description}
-							<div class="descrip">{Description}</div>
-							{/block:Description}				
-							<ul class="post-tags">
-								{block:ContentSource}
-									<small class="attribution">
-										<a href="{SourceURL}">
-											{lang:Source}:
-											{block:SourceLogo}
-												<img src="{BlackLogoURL}" width="{LogoWidth}"
-												height="{LogoHeight}" alt="{SourceTitle}" />
-											{/block:SourceLogo}
-											{block:NoSourceLogo}
-												{SourceLink}
-											{/block:NoSourceLogo}
-										</a>
-									</small>
-								{/block:ContentSource}
-								{block:HasTags}<li class="tags">Tags: 
-								<ul>{block:Tags}
-									<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
-								</ul>
-								</li>{/block:HasTags}
-							</ul>
 							<br />
 
 							{/block:Link}
@@ -446,7 +396,33 @@
 									{/block:Label}{Line}</li>
 									{/block:Lines}
 								</ul>
-								<ul class="post-tags">
+								{block:ContentSource}
+									<small class="attribution">
+										<a href="{SourceURL}">
+											{lang:Source}:
+											{block:SourceLogo}
+												<img src="{BlackLogoURL}" width="{LogoWidth}"
+												height="{LogoHeight}" alt="{SourceTitle}" />
+											{/block:SourceLogo}
+											{block:NoSourceLogo}
+												{SourceLink}
+											{/block:NoSourceLogo}
+										</a>
+									</small>
+								{/block:ContentSource}
+								<br />
+								{/block:Chat}
+
+								<!-- Audio Post -->
+								{block:Audio}
+								</header>
+								<div class="postcontent audio">
+									<div class="audiobox">
+										<center>{AudioPlayerBlack}</center>
+									</div>
+									{block:Caption}
+									<div class="descrip">{Caption}</div>
+									{/block:Caption}						
 									{block:ContentSource}
 										<small class="attribution">
 											<a href="{SourceURL}">
@@ -461,21 +437,17 @@
 											</a>
 										</small>
 									{/block:ContentSource}
-								</ul>
-								<br />
-								{/block:Chat}
+									<br />
+									{/block:Audio}
 
-								<!-- Audio Post -->
-								{block:Audio}
-								</header>
-								<div class="postcontent audio">
-									<div class="audiobox">
-										<center>{AudioPlayerBlack}</center>
-									</div>
-									{block:Caption}
-									<div class="descrip">{Caption}</div>
-									{/block:Caption}						
-									<ul class="post-tags">
+									<!-- Video Post -->
+									{block:Video}
+									</header>
+									<div class="postcontent video">
+										{Video-500}
+										{block:Caption}
+										<div class="descrip">{Caption}</div>
+										{/block:Caption}									
 										{block:ContentSource}
 											<small class="attribution">
 												<a href="{SourceURL}">
@@ -490,34 +462,6 @@
 												</a>
 											</small>
 										{/block:ContentSource}
-									</ul>
-									<br />
-									{/block:Audio}
-
-									<!-- Video Post -->
-									{block:Video}
-									</header>
-									<div class="postcontent video">
-										{Video-500}
-										{block:Caption}
-										<div class="descrip">{Caption}</div>
-										{/block:Caption}									
-										<ul class="post-tags">
-											{block:ContentSource}
-												<small class="attribution">
-													<a href="{SourceURL}">
-														{lang:Source}:
-														{block:SourceLogo}
-															<img src="{BlackLogoURL}" width="{LogoWidth}"
-															height="{LogoHeight}" alt="{SourceTitle}" />
-														{/block:SourceLogo}
-														{block:NoSourceLogo}
-															{SourceLink}
-														{/block:NoSourceLogo}
-													</a>
-												</small>
-											{/block:ContentSource}
-										</ul>
 										<br />
 										{/block:Video}
 
