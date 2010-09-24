@@ -6,14 +6,13 @@
 		<title>{Title}{block:PostTitle} : {PostTitle}{/block:PostTitle}</title>
 		<link rel="shortcut icon" href="{Favicon}" />
 		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
-		<link rel="me" type="text/html" href="http://www.google.com/profiles/i5ivem" /> 
+		<link rel="me" type="text/html" href="http://www.google.com/profiles/i5ivem" />
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:bold&subset=latin|Vollkorn&subset=latin|Vollkorn:italic&subset=latin' rel='stylesheet' type='text/css'>
 		<meta name="color:Page border and Header Footer text" content="#FFFFFF"/>
 		<meta name="color:Header background" content="#FF0000"/>
 		<meta name="color:Body background" content="#ECFD31"/>
 		<meta name="color:Footer background and Body text" content="#1616FC"/>
-		<meta name="color:Header link" content="#444444"/>
-		<meta name="color:Header link hover" content="#808080"/>
-		<meta name="color:Date" content="#7373FA"/>
+		<meta name="color:Date permalink" content="#7373FA"/>
 		<style type="text/css">
 			/*whilst editing 
 			body, #main, aside, footer {
@@ -61,8 +60,9 @@
 			
 			/* Body Header styles */
 			body>header h1 {
-				font: 4em 'Lucida Grande', Gill Sans MT, sans-serif;
+				font: 5em 'Yanone Kaffeesatz', Georgia, Times New Roman, Times, serif;
 				padding-top: 0.25em;
+				letter-spacing: 0.1em;
 			}
 			body>header h1, body>header h1 a, body>header h2 {
 				text-decoration: none;
@@ -72,7 +72,12 @@
 				color: {color:Page border and Header Footer text};
 			}
 			body>header h2 {
+				font-family: 'Vollkorn', Georgia, Times New Roman, Times, serif;
+				font-style: italic;
+				font-weight: normal;
 				padding-bottom: 0.5em;
+				letter-spacing: 0.1em;
+				font-size: 1.5em;
 			}
 			
 			/* Body Section styles */
@@ -83,23 +88,9 @@
 				margin-right: auto;
 				margin-top: 7em; /*To offset effect of negative margin top on page navigation */
 			}
-		
 			a img {
 				border: none;
 			}
-			
-			/* to delete ??
-			ul {
-				margin-left: 0em !important;
-				margin-bottom: 1em !important;
-			}
-			ol {
-				margin-left: 0em !important;
-				margin-bottom: 1em !important;
-			}
-			*/
-
-			
 			article {
 				margin: 0 0 4.5em 0;
 			}
@@ -115,8 +106,7 @@
 				margin-bottom: 1.5em;
 				padding: 0.0em 1.0em 0.5em 0em;
 				text-decoration: none;
-				color: {color:Date};
-
+				color: {color:Date permalink};
 			}
 			article footer a:hover {
 				color: {color:Footer background and Body text};
@@ -124,7 +114,6 @@
 
 			/* Generic post formatting */
 			article div {				
-				font-size: 1.2em;
 				color: {color:Footer background and Body text};
 			}
 			article div ul, article div ol {
@@ -156,25 +145,21 @@
 				margin-left: 2.0em;
 				border-left: 1px solid {color: Footer background and Body text};
 			}
-			article header h1 {
+			article header h1, article h2 {
 				color: {color:Footer background and Body text};
 				font-weight: normal;
 				font-size: 2.2em;
-				letter-spacing: -0.05em;
+				font-family: 'Vollkorn', Georgia, Times New Roman, Times, serif;
 				margin: 0 0 0.8em 0;
 			}
 			article h2 {
-				color: {color:Footer background and Body text};
-				font-weight: normal;
 				font-size: 1.5em;
-				letter-spacing: -0.05em;
-				margin: 0 0 0.8em 0;
 			}
 			
 			/*Various post type styles*/
 			/*QUOTE*/
-			article .quote div.quote {
-				font-size: 1.6em;
+			article .quote blockquote {
+				font-size: 1.8em;
 				font-weight: bold;
 				color: {color: Footer background and Body text};
 			}
@@ -182,18 +167,12 @@
 				margin: 1.0em 0 0 0;
 			}
 			/*LINK*/
-			article .link .href {
-				font-size: 1.8em;
-				letter-spacing: -0.05em;
-			}
-			article .link .href a {
+			article h1.href a {
 				text-decoration: underline;				
-				padding: 0px;
 			}
-			article .link .href a:hover {
-				text-decoration: none;
-				color: {color:Post Link Hover};
-				padding: 0px;
+			article h1.href a:hover {
+				color: {color:Body background};
+				background: {color:Footer background and Body text}
 			}
 			article .descrip ul, article div ul, article .descrip ol, article div ol {
 				padding: 0px 0px 0px 1.6em;
@@ -381,11 +360,11 @@
 
 						<!-- Link Post -->
 						{block:Link}
+						<h1 class="href">
+							<a href="{URL}" {Target}>{Name}</a>
+						</h1>
 						</header>
 						<div class="link">
-							<div class="href">
-								<a href="{URL}" {Target}>{Name}</a>
-							</div>
 							{block:Description}
 							<div class="descrip">{Description}</div>
 							{/block:Description}				
@@ -521,7 +500,7 @@
 		<ul>
 			<li><a href="/archive">Archive</a></li>
 			<li><a href="/random">Random</a></li>
-			<li><a href="/about">About</a></li>
+			<li><a href="/about.html">About</a></li>
 		</ul>
 	</nav><!-- End of links -->	
 	<form action="/search" method="get">
