@@ -14,10 +14,12 @@
 		<meta name="color:Footer background and Body text" content="#1616FC"/>
 		<meta name="color:Date permalink" content="#7373FA"/>
 		<style type="text/css">
-			/*whilst editing 
-			body, #main, aside, footer {
-				border: 1px dotted red;
-			}*/
+			/* For pre-HTML5 browsers, from http://diveintohtml5.org/semantics.html#new-elements */
+			article,aside,details,figcaption,figure,
+			footer,header,hgroup,menu,nav,section { 
+				display:block;
+			}
+			
 			* {
 				margin: 0;
 				padding: 0;
@@ -50,6 +52,11 @@
 				-moz-border-radius: 3em;
 			}
 			body>footer {
+				/* For Gecko 1.9: In Tumblr customise/preview mode,
+				   Selector not working in 
+				   Also, footer positioning and width is out 
+				   but all ok when page is published!				  
+				*/
 				background: {color:Footer background and Body text};
 				color: {color:Page border and Header Footer text};
 				font-size: 1.0em;
