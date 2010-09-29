@@ -7,7 +7,7 @@
 		<link rel="shortcut icon" href="{Favicon}" />
 		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
 		<link rel="me" type="text/html" href="http://www.google.com/profiles/i5ivem" />
-		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:bold&subset=latin|Vollkorn&subset=latin|Vollkorn:italic&subset=latin' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:bold&amp;subset=latin|Vollkorn&amp;subset=latin|Vollkorn:italic&amp;subset=latin' rel='stylesheet' type='text/css'>
 		<meta name="color:Page border and Header Footer text" content="#FFFFFF"/>
 		<meta name="color:Header background" content="#FF0000"/>
 		<meta name="color:Body background" content="#ECFD31"/>
@@ -39,11 +39,11 @@
 				border-top-right-radius: 3em;
 			}
 			body {
-				font: 0.8em 'Lucida Grande', Gill Sans MT, sans-serif;
+				font: 0.8em "Lucida Grande", "Gill Sans MT", sans-serif;
 				margin: 0px;
 				padding: 0px;
 				background: {color:Body background};
-				min-width: 53em; /*fits tagline and photos*/
+				min-width: 53em;
 				border-radius: 3em;
 			}
 			body>footer {
@@ -60,7 +60,7 @@
 			
 			/* Body Header styles */
 			body>header h1 {
-				font: 5em 'Yanone Kaffeesatz', Georgia, Times New Roman, Times, serif;
+				font: 5em "Yanone Kaffeesatz", Georgia, "Times New Roman", Times, serif;
 				padding-top: 0.25em;
 				letter-spacing: 0.1em;
 			}
@@ -72,7 +72,7 @@
 				color: {color:Page border and Header Footer text};
 			}
 			body>header h2 {
-				font-family: 'Vollkorn', Georgia, Times New Roman, Times, serif;
+				font-family: "Vollkorn", Georgia, "Times New Roman", Times, serif;
 				font-style: italic;
 				font-weight: normal;
 				padding-bottom: 0.5em;
@@ -99,7 +99,7 @@
 			/* Article Footer, i.e. Permalinks */
 			article footer {
 				text-align: right;
-				color: {color: Header background}
+				color: {color:Header background};
 			}
 			article footer a {
 				display: inline-block;
@@ -121,7 +121,6 @@
 			}
 			article div a {
 				text-decoration: underline;
-				color: {color:Link};
 			}
 			article div a:hover {
 				text-decoration: underline;
@@ -149,7 +148,7 @@
 				color: {color:Footer background and Body text};
 				font-weight: normal;
 				font-size: 2.2em;
-				font-family: 'Vollkorn', Georgia, Times New Roman, Times, serif;
+				font-family: "Vollkorn", Georgia, "Times New Roman", Times, serif;
 				margin: 0 0 0.8em 0;
 			}
 			article h2 {
@@ -161,7 +160,7 @@
 			article .quote blockquote {
 				font-size: 1.8em;
 				font-weight: bold;
-				color: {color: Footer background and Body text};
+				color: {color:Footer background and Body text};
 			}
 			article .quote div.source {
 				margin: 1.0em 0 0 0;
@@ -224,6 +223,7 @@
 			body>footer #links a {
 				text-decoration: underline;
 				color: {color:Page border and Header Footer text};
+				background: {transparent};
 			}
 			body>footer #links a:hover {
 				text-decoration: underline;
