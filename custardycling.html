@@ -7,7 +7,7 @@
 		<link rel="shortcut icon" href="{Favicon}" />
 		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
 		<link rel="me" type="text/html" href="http://www.google.com/profiles/i5ivem" />
-		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:bold&amp;subset=latin|Vollkorn&amp;subset=latin|Vollkorn:italic&amp;subset=latin' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:bold|Merriweather' rel='stylesheet' type='text/css'>
 		<meta name="color:Page border and Header Footer text" content="#FFFFFF"/>
 		<meta name="color:Header background" content="#FF0000"/>
 		<meta name="color:Body background" content="#ECFD31"/>
@@ -84,7 +84,7 @@
 				color: {color:Page border and Header Footer text};
 			}
 			body>header h2 {
-				font-family: "Vollkorn", Georgia, "Times New Roman", Times, serif;
+				font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
 				font-style: italic;
 				font-weight: normal;
 				padding-bottom: 0.5em;
@@ -160,7 +160,8 @@
 				color: {color:Footer background and Body text};
 				font-weight: normal;
 				font-size: 2.2em;
-				font-family: "Vollkorn", Georgia, "Times New Roman", Times, serif;
+				font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+				text-shadow: 1px 1px 3px {color:Date permalink};
 				margin: 0 0 0.8em 0;
 			}
 			article h2 {
@@ -368,7 +369,7 @@
 										height="{LogoHeight}" alt="{SourceTitle}" />
 									{/block:SourceLogo}
 									{block:NoSourceLogo}
-										{SourceLink}
+										{SourceTitle}
 									{/block:NoSourceLogo}
 								</a>
 							</small>
