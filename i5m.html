@@ -21,13 +21,20 @@
 		<meta name="color:Date Hover" content="#444444"/>
 		<style type="text/css">
 			/*whilst editing 
-			body, #main, aside, footer {
+			body, section, aside, footer {
 				border: 1px dotted red;
 			}*/
+			/* For pre-HTML5 browsers, from http://diveintohtml5.org/semantics.html#new-elements */
+			article,aside,details,figcaption,figure,
+			footer,header,hgroup,menu,nav,section { 
+				display:block;
+			}
 			* {
 				margin: 0;
 				padding: 0;
 			}
+
+			/* Main Layout */
 			html {
 				margin: 3em;
 				background: {color:Background};  
@@ -40,7 +47,7 @@
 				background: #fff;
 				min-width: 53em; /*fits tagline and photos*/
 			}
-			#main {
+			section {
 				padding: 1em;
 				margin-left: 25%;
 				max-width: 50em;
@@ -290,6 +297,8 @@
 				margin-top: 0px;
 				padding-top: 0px;
 			}
+
+			/* Body Footer styles */
 			footer {
 				display: block;
 				color: #444444;
@@ -338,7 +347,7 @@
 		</header><!-- End of Side/Top bar -->
 
 		<!-- TUMBLR POSTS -->
-		<div id="main">
+		<section>
 			{block:SearchPage}
 			<div id="searchresultcount">
 				<p>Your search for <span class="query"><b>{SearchQuery}</b></span> yielded {SearchResultCount} result(s).</p>
@@ -522,7 +531,7 @@
 {/block:NextPage}
 </nav><!-- End of prev-next Page Navigation -->
 
-</div> <!-- End of main -->
+</section>
 
 <footer>
 Theme based on <a href="http://customthemes.tumblr.com/post/70461310/prowhite-by-josh-jenkins-based-on-black-and-blue">Pro White 1.0</a>  / Powered by <a href="http://www.tumblr.com">Tumblr</a> / i5m created content: <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a>
